@@ -2,8 +2,8 @@
 
 
 The goals of this writeup are the following:
-* Make a pipeline that finds lane lines on the road
-* Reflect on the project 1 in a written report
+* Describe the pipeline I made for finding the lane lines on the road.
+* Reflect on the project 1. 
 
 
 [//]: # (Image References)
