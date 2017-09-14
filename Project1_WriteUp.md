@@ -16,15 +16,15 @@ The goals of this writeup are the following:
 
 My pipeline consisted of 6 steps as I also annotated along with the code in P1 notebook:
 
-Step 1. Convert the image to grayscale by applying Grayscale transform 
+*Step 1. Convert the image to grayscale by applying Grayscale transform 
 
-Step 2. Reduce image noise by applying Gaussian smoothing
+*Step 2. Reduce image noise by applying Gaussian smoothing
 
-Step 3. Convert the grayscale image to the edges image (dots) by applying Canny edge transform
+*Step 3. Convert the grayscale image to the edges image (dots) by applying Canny edge transform
 
-Step 4. Limit the region of interest (ROI) to be only on te road by using the helper funciton- cv2.fillPoly to create a masked image
+*Step 4. Limit the region of interest (ROI) to be only on te road by using the helper funciton- cv2.fillPoly to create a masked image
 
-Step 5. Convert the edges detected image from image space (points) to Hough space (lines) and draw those lines out
+*Step 5. Convert the edges detected image from image space (points) to Hough space (lines) and draw those lines out
 
 
 Here I improved the draw_lines() function by doing the following:
@@ -36,7 +36,7 @@ Here I improved the draw_lines() function by doing the following:
  c) Then in each catagory I averaged each line segments (y=mx+b) by averaging their slope(m) and the intercept(b). The averaging takes length of Hough line into consideration, longer lines has higher weight, i.e. longer lines weight in more than shorter lines.   
    
    
-Step 6. Final step is to put those semi-transparent left and right lines into the original image by using the helper function cv2.addWeighted. 
+*Step 6. Final step is to put those semi-transparent left and right lines into the original image by using the helper function cv2.addWeighted. 
 
 
 
