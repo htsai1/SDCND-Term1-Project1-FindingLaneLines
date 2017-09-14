@@ -53,7 +53,14 @@ Current pipeline does not utilize color selection method
 
 ### 3. Suggest possible improvements to your pipeline
 
-1. A possible improvement would be to include cv2.inRange() for color selection so the pipeline could identify not only right left lane but also the white or yellow line. For regulation/ obey traffic law purpose, this could be quite useful.
+Several possible improvements are identified:
 
-Another potential improvement could be to ...
+* To include cv2.inRange() for color selection so the pipeline could identify not only right left lane but also the white or yellow line. For regulation/ obey traffic law purpose, this could be quite useful.
+
+* To keep tuning the parameters in Canny edge detection algorithm and Hough transform algorithm for a better edge (points/dots) and hough lines detection. 
+
+* To adjust the mask area due to the lane lines are much more close to the right in the Optional Challenge video.
+
+
+
 
