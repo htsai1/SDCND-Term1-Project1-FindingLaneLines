@@ -15,15 +15,23 @@ The goals of this writeup are the following:
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
 My pipeline consisted of 6 steps as I also annotated along with the code in P1 notebook:
+
 Step 1: Convert the image to grayscale by applying Grayscale transform 
+
 Step 2: Reduce image noise by applying Gaussian smoothing
+
 Step 3: Convert the grayscale image to the edges image (dots) by applying Canny edge transform
-Step 4: Limit the region of interest (ROI) to be only on te road by using the helper funciton- cv2.fillPoly to create a masked image.
+
+Step 4: Limit the region of interest (ROI) to be only on te road by using the helper funciton- cv2.fillPoly to create a masked image
+
 Step 5: Convert the edges detected image from image space (points) to Hough space (lines) and draw those lines out
 
 Here I improved the draw_lines() function by doing the following:
+
  a) From those lines I got after the hough transform, I calculate their slopes and only take those lines with the slope in the range I desired, here I give it the range from 0.4 to 2.2. It will reject those hough lines that are being too flat or too vertical, which are considered as noise as this point.  
+ 
  b) From the calculated slopes, I could also separate those hough line segments into two catagories: left lane lines (positive slope) or right lane lines (negative slope). 
+ 
  c) Then in each catagory I averaged each line segments (y=mx+b) by averaging their slope(m) and the intercept(b). The averaging takes length of Hough line into consideration, longer lines has higher weight, i.e. longer lines weight in more than shorter lines.   
         
 Step 6: Final step is to put those semi-transparent left and right lines into the original image by using the helper function cv2.addWeighted. 
