@@ -41,26 +41,23 @@ Here I improved the draw_lines() function by doing the following:
 
 
 
-
 ### 2. Identify potential shortcomings with your current pipeline
+Potential shortcomings with the current pipeline are:
+* Canny edge detection rely on the gradient (color change) of the image in order to identify the edge, that mean when the color of the road is light, or close to color of the lane lines (yellow or white), the whole line detection would be shaky. This shortcoming is quite obvious in the challenge video between 0:03 - 0:05 when the road color is relatively light and the averaged/extrapolated lines become way off (comparing to when the road color is dark).
+
+* Comparing to detecting the solid line, current pipeline shows lower detecting performance on the dash lines (1st video 0:02-0:03)
 
 
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
-
-Current pipeline does not utilize color selection method
 
 ### 3. Suggest possible improvements to your pipeline
 
 Several possible improvements are identified:
 
-* To include cv2.inRange() for color selection so the pipeline could identify not only right left lane but also the white or yellow line. For regulation/ obey traffic law purpose, this could be quite useful.
+* To continue tuning the parameters in Canny edge detection algorithm and Hough transform algorithm for a better edge (points/dots) and hough lines detection. 
 
-* To keep tuning the parameters in Canny edge detection algorithm and Hough transform algorithm for a better edge (points/dots) and hough lines detection. 
+* To adjust the masked image area (vertices) due to the lane lines are much more close to the right in the Optional Challenge video.
 
-* To adjust the mask area due to the lane lines are much more close to the right in the Optional Challenge video.
-
+* To include cv2.inRange() for color selection so the pipeline could identify not only right left lane but also the white or yellow line. For regulation/ obey traffic law purpose, line color identify could be quite useful.
 
 
 
