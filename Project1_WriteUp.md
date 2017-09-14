@@ -53,7 +53,7 @@ Potential shortcomings with the current pipeline are:
 
 Several possible improvements are identified:
 
-* To continue tuning the parameters in Canny edge detection algorithm and Hough transform algorithm for a better edge (points/dots) and hough lines detection. 
+* To continue tuning the parameters in Canny edge detection algorithm and Hough transform algorithm for a better edge (points/dots) and hough lines detection, eventaully increase the robustness of detecting capability.
 
 * To adjust the masked image area (vertices) due to the lane lines are much more close to the right in the Optional Challenge video.
 
